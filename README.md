@@ -2,6 +2,10 @@
 
 An interactive portfolio website built with React to demonstrate learning experience and showcase professional profile. This project demonstrates React concepts including components, JSX, state management, routing, and hooks.
 
+## 🌐 Live Website
+
+**https://sravanthigantasala96-del.github.io/portfolio-website**
+
 ## Features
 
 - **Component-Based Architecture**: Modular, reusable React components
@@ -10,7 +14,7 @@ An interactive portfolio website built with React to demonstrate learning experi
 - **JSX**: Declarative UI rendering
 - **Interactive UI**: Dynamic content, tabs, filters, and animations
 - **Responsive Design**: Mobile-friendly layout
-- **Modern Styling**: Gradient backgrounds, animations, and hover effects
+- **Modern Styling**: Professional design inspired by Danske Bank styling
 
 ## React Concepts Demonstrated
 
@@ -20,36 +24,6 @@ An interactive portfolio website built with React to demonstrate learning experi
 4. **State Management**: useState hook for managing component state
 5. **Routing**: React Router DOM for navigation between pages
 6. **React Hooks**: useState, useEffect for state and side effects
-
-## Project Structure
-
-```
-portfolio-website/
-├── public/
-│   └── index.html
-├── src/
-│   ├── components/
-│   │   ├── Navigation.js
-│   │   ├── Navigation.css
-│   │   ├── Home.js
-│   │   ├── Home.css
-│   │   ├── About.js
-│   │   ├── About.css
-│   │   ├── Experience.js
-│   │   ├── Experience.css
-│   │   ├── Education.js
-│   │   ├── Education.css
-│   │   ├── Skills.js
-│   │   ├── Skills.css
-│   │   ├── Projects.js
-│   │   └── Projects.css
-│   ├── App.js
-│   ├── App.css
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
-```
 
 ## Installation
 
@@ -79,6 +53,13 @@ Create an optimized production build:
 npm run build
 ```
 
+## Deployment
+
+Deploy to GitHub Pages:
+```bash
+npm run deploy
+```
+
 ## Pages
 
 - **Home**: Hero section with role animation and quick links
@@ -95,25 +76,13 @@ npm run build
 - CSS3 (Animations, Flexbox, Grid)
 - JavaScript ES6+
 
-## Learning Outcomes
+## Author
 
-This project demonstrates:
-- Understanding of coding concepts and JavaScript terminology
-- Ability to develop JavaScript products equivalent to an intermediate level
-- Practical application of React framework concepts
-- Component-driven development approach
-- State management in React applications
-- Routing implementation
-- Modern web development practices
-
-## Contact
-
-- **Email**: sravanthigantasala.96@gmail.com
-- **Phone**: (+45)-917959898
-- **Location**: Aarhus/Copenhagen, Denmark
-- **LinkedIn**: [linkedin.com/in/sravanthigantasala](https://www.linkedin.com/in/sravanthigantasala)
+**Sai Sravanthi G**
+- Email: sravanthigantasala.96@gmail.com
+- Location: Aarhus/Copenhagen, Denmark
+- LinkedIn: [linkedin.com/in/sravanthigantasala](https://www.linkedin.com/in/sravanthigantasala)
 
 ---
 
 Built with ❤️ using React
-
