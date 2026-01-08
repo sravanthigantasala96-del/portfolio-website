@@ -7,21 +7,36 @@ function Projects() {
   const projects = [
     {
       title: 'This Portfolio Website',
+      role: 'Personal Project',
       description: 'Interactive portfolio website demonstrating React skills and concepts',
-      technologies: ['React', 'React Router', 'React Hooks', 'JSX', 'CSS'],
+      technologies: ['React', 'React Router', 'React Hooks', 'JSX', 'CSS', 'Git', 'GitHub Pages'],
       achievements: [
-        'Component-based architecture',
-        'State management with React Hooks',
-        'Routing implementation',
-        'Responsive design',
-        'Interactive user experience'
+        'Built a multi-page application with component-based architecture and state management using React Hooks',
+        'Implemented React Router for navigation and created responsive layouts with CSS Grid and Flexbox',
+        'Deployed to GitHub Pages with proper routing configuration and custom 404 handling for SPA compatibility'
       ],
       featured: true
     },
     {
-      title: 'Winnabego CRM Modernization',
-      description: 'Migrated Winnabego\'s operations to Salesforce, unifying dealer and warranty processes',
-      technologies: ['Salesforce', 'LWC', 'Apex', 'Sales Cloud', 'Service Cloud'],
+      title: 'Memory Game',
+      role: 'Student/Learner - ReDI School Team Project',
+      description: 'React-based memory card game developed collaboratively in a small team at ReDI School of Integration, Denmark. Applied core React concepts by breaking the application into reusable components in a real team environment.',
+      technologies: ['React', 'React Router', 'React Hooks', 'JavaScript', 'JSX', 'CSS3', 'Flexbox', 'Git', 'GitHub Pages'],
+      achievements: [
+        'Structured reusable components and implemented state management for user interactions and card matching logic',
+        'Collaborated with teammates on code reviews, task management (Trello), documentation (Gamma), and version control (Git)',
+        'Deployed the application via GitHub Pages and practiced component-based design in a real team environment'
+      ],
+      demoLink: {
+        url: 'https://sravanthigantasala96-del.github.io/memory-game-react',
+        label: 'View Live Demo'
+      }
+    },
+    {
+      title: 'Winnebago CRM Modernization',
+      role: 'IT Analyst (Salesforce Developer) - Tata Consultancy Services',
+      description: 'Migrated Winnebago\'s operations to Salesforce, unifying dealer and warranty processes',
+      technologies: ['Salesforce', 'LWC', 'Apex', 'Sales Cloud', 'Service Cloud', 'Agentforce (prev. Salesforce Einstein (AI))'],
       achievements: [
         'Automated workflows and integrated with SAP',
         'Enhanced transparency and sales productivity',
@@ -30,6 +45,7 @@ function Projects() {
     },
     {
       title: 'ARM - Salesforce Transformation',
+      role: 'IT Analyst (Salesforce Developer) - Tata Consultancy Services',
       description: 'Transformed Salesforce into a scalable platform supporting global sales and service teams',
       technologies: ['Salesforce', 'LWC', 'Apex', 'Automation'],
       achievements: [
@@ -40,6 +56,7 @@ function Projects() {
     },
     {
       title: 'GECAS - Web Platform Enhancement',
+      role: '.NET Developer/Associate Consultant - Capgemini',
       description: 'Guided scalable web app development with front-end optimization and automation',
       technologies: ['JavaScript', 'ASP.NET MVC', 'MySQL', 'Testing'],
       achievements: [
@@ -67,13 +84,16 @@ function Projects() {
               onClick={() => setSelectedProject(index)}
             >
               {project.featured && (
-                <div className="featured-badge">Current Project</div>
+                <div className="featured-badge">Latest Project</div>
               )}
               <h2>{project.title}</h2>
+              {project.role && (
+                <p className="project-role">{project.role}</p>
+              )}
               <p className="project-description">{project.description}</p>
               
               <div className="technologies">
-                <h4>Technologies:</h4>
+                <h4>Tech Stack:</h4>
                 <div className="tech-tags">
                   {project.technologies.map((tech, techIndex) => (
                     <span key={techIndex} className="tech-tag">{tech}</span>
@@ -83,12 +103,27 @@ function Projects() {
 
               {selectedProject === index && (
                 <div className="project-details">
-                  <h4>Achievements:</h4>
+                  <h4>✨ Achievements:</h4>
                   <ul>
                     {project.achievements.map((achievement, achIndex) => (
                       <li key={achIndex}>{achievement}</li>
                     ))}
                   </ul>
+                  {project.demoLink && project.demoLink.url && (
+                    <div className="project-link">
+                      <a 
+                        href={project.demoLink.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="demo-link"
+                      >
+                        {project.demoLink.label}
+                      </a>
+                      {project.demoLink.note && (
+                        <span className="link-note"> ({project.demoLink.note})</span>
+                      )}
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -96,7 +131,7 @@ function Projects() {
         </div>
 
         <div className="card react-concepts-card">
-          <h2>React Concepts Demonstrated in This Portfolio</h2>
+          <h2>⚛️ React Concepts Demonstrated in This Portfolio</h2>
           <div className="concepts-grid">
             <div className="concept-item">
               <h3>Component-Based Architecture</h3>

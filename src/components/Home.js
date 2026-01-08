@@ -18,7 +18,14 @@ function Home() {
     }, 3000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [roles.length]);
+
+  const getArticle = (role) => {
+    // Check if role starts with a vowel sound
+    const vowelSounds = ['a', 'e', 'i', 'o', 'u'];
+    const firstLetter = role.charAt(0).toLowerCase();
+    return vowelSounds.includes(firstLetter) ? 'an' : 'a';
+  };
 
   return (
     <div className="home">
@@ -28,7 +35,7 @@ function Home() {
             Hi, I'm <span className="highlight">Sai Sravanthi G</span>
           </h1>
           <div className="role-display">
-            <span className="role-label">I'm a</span>
+            <span className="role-label">I'm {getArticle(roles[currentRole])}</span>
             <span className="role-text" key={currentRole}>
               {roles[currentRole]}
             </span>
@@ -52,12 +59,16 @@ function Home() {
             <div className="stat-label">Years Experience</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">Multiple</div>
-            <div className="stat-label">Certifications</div>
+            <div className="stat-number">Full Stack & Salesforce</div>
+            <div className="stat-label">Core Expertise</div>
           </div>
           <div className="stat-card">
-            <div className="stat-number">AI/ML</div>
-            <div className="stat-label">Post Graduate</div>
+            <div className="stat-number">React & AI</div>
+            <div className="stat-label">Current Focus</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-number">CS Graduate</div>
+            <div className="stat-label">AI/ML Post Graduate</div>
           </div>
         </div>
       </div>
@@ -67,19 +78,19 @@ function Home() {
           <h2>Explore My Profile</h2>
           <div className="links-grid">
             <Link to="/experience" className="link-card">
-              <h3>Professional Experience</h3>
+              <h3>💼 Professional Experience</h3>
               <p>7+ years of delivering scalable solutions</p>
             </Link>
             <Link to="/education" className="link-card">
-              <h3>Education & Learning</h3>
-              <p>Continuous learning in React and AI</p>
+              <h3>📚 Education & Learning</h3>
+              <p>Continuous growth in technology and development</p>
             </Link>
             <Link to="/skills" className="link-card">
-              <h3>Technical Skills</h3>
+              <h3>🛠️ Technical Skills</h3>
               <p>Full-stack and Salesforce expertise</p>
             </Link>
             <Link to="/projects" className="link-card">
-              <h3>Projects & Portfolio</h3>
+              <h3>🚀 Projects & Portfolio</h3>
               <p>Real-world applications and solutions</p>
             </Link>
           </div>

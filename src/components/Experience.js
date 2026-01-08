@@ -9,19 +9,21 @@ function Experience() {
       company: 'Tata Consultancy Services',
       position: 'IT Analyst (Salesforce Developer)',
       location: 'Hyderabad, IN',
-      period: 'June 2022 - September 2024',
+      period: 'July 2022 - October 2024',
       achievements: [
+        'Increased sales efficiency by 23% through the implementation of automated workflows, process improvements and other advanced features',
         'Boosted process efficiency by 20% and reduced operational costs by 12% by implementing complex Salesforce configurations and customizations',
         'Decreased lead conversion time by 50%, from 48 to 24 hours, and increased customer satisfaction by 9% by enhancing Sales and Service Cloud features',
-        'Designed and maintained reusable LWC and Apex classes for consistent and maintainable codebases',
-        'Resulted in a 36% improvement in page loading speed and a 20% increase in user satisfaction'
+        'Designed and implemented complex Salesforce integrations with ERP systems and other platforms using REST/SOAP APIs and middleware',
+        'Designed and maintained reusable LWC and Apex classes for consistent and maintainable codebases. Resulted in a 36% improvement in page loading speed and a 20% increase in user satisfaction',
+        'Reduced long-term maintenance overhead by introducing scalable design patterns, cleaning up redundant metadata and optimizing database queries'
       ]
     },
     {
       company: 'Capgemini',
       position: '.NET Developer/Associate Consultant',
       location: 'Hyderabad, IN',
-      period: 'July 2017 - May 2022',
+      period: 'August 2017 - June 2022',
       achievements: [
         'Increased user engagement by 26% by modeling and developing scalable web applications using JavaScript, ASP.NET MVC, and PL/SQL',
         'Improved front-end performance by optimizing JavaScript codebase, reducing load times by 15%',
@@ -39,6 +41,15 @@ function Experience() {
         <div className="page-header">
           <h1>Professional Experience</h1>
           <p>7+ years of delivering scalable solutions across industries</p>
+        </div>
+
+        <div className="card summary-card">
+          <h2>💼 Career Summary</h2>
+          <p>
+            Over seven years building enterprise platforms and scalable solutions, with experience spanning 
+            full-stack development at Capgemini and Salesforce development at TCS. Currently building my 
+            career in Denmark, focusing on front-end development, automation, and scalable solutions.
+          </p>
         </div>
 
         <div className="experience-container">
@@ -63,13 +74,13 @@ function Experience() {
                     <h3>{experiences[selectedCompany].position}</h3>
                   </div>
                   <div className="experience-meta">
-                    <span className="location">{experiences[selectedCompany].location}</span>
-                    <span className="period">{experiences[selectedCompany].period}</span>
+                    <span className="location">📍 {experiences[selectedCompany].location}</span>
+                    <span className="period">📅 {experiences[selectedCompany].period}</span>
                   </div>
                 </div>
                 
                 <div className="achievements">
-                  <h4>Key Achievements:</h4>
+                  <h4>✨ Key Achievements:</h4>
                   <ul>
                     {experiences[selectedCompany].achievements.map((achievement, index) => (
                       <li key={index}>{achievement}</li>
@@ -79,17 +90,6 @@ function Experience() {
               </div>
             )}
           </div>
-        </div>
-
-        <div className="card summary-card">
-          <h2>Career Summary</h2>
-          <p>
-            With over seven years of experience, I have developed a strong foundation in 
-            full-stack development and Salesforce platforms. My work focuses on creating 
-            scalable solutions, optimizing performance, and improving user experiences. 
-            I'm now expanding into modern React development to enhance my front-end 
-            capabilities and contribute to innovative, AI-enabled projects.
-          </p>
         </div>
       </div>
     </div>

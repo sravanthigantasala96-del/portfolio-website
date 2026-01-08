@@ -9,7 +9,8 @@ function Education() {
       id: 1,
       course: 'Front-End Development with React',
       institution: 'ReDI School of Digital Integration',
-      period: '2025',
+      location: 'Denmark',
+      period: 'September - December 2025',
       description: '12-week course focusing on JavaScript and React fundamentals',
       highlights: [
         'JS frameworks and JSX',
@@ -17,21 +18,28 @@ function Education() {
         'State management',
         'Routing',
         'React Hooks',
-        'Case project using JavaScript and React'
+        'Memory Game case project using JavaScript and React'
       ],
-      details: '36 contact hours with assignments, self-study, and project work. Equivalent to intermediate level JavaScript development.'
+      details: 'Assignments, self-study, and project work. Equivalent to intermediate level JavaScript development. Gained exposure to the Danish tech ecosystem and work culture through collaborative project work and networking opportunities.'
     },
     {
       id: 2,
       degree: 'Post Graduate Diploma in ML/AI',
       institution: 'International Institute of Information Technology Bangalore',
       location: 'India',
-      period: 'May 2021 - November 2022',
+      period: 'June 2021 - December 2022',
       description: 'Specialized program in Machine Learning and Artificial Intelligence',
       highlights: [
-        'Neural Networks',
-        'Supervised/Unsupervised Learning',
-        'Model Deployment Workflows'
+        'Neural Networks and Deep Learning',
+        'Supervised and Unsupervised Learning',
+        'Regression and Classification Algorithms',
+        'Natural Language Processing (NLP)',
+        'Computer Vision',
+        'Python Programming for Data Science',
+        'Mathematics and Statistics for AI/ML',
+        'Model Deployment Workflows',
+        'TensorFlow and PyTorch Frameworks',
+        'Clustering and Dimensionality Reduction'
       ]
     },
     {
@@ -39,8 +47,21 @@ function Education() {
       degree: 'Bachelor of Technology in Computer Science Engineering',
       institution: 'Jawaharlal Nehru Technological University, Kakinada',
       location: 'India',
-      period: 'August 2013 - June 2017',
-      description: 'Comprehensive computer science and engineering program'
+      period: 'September 2013 - July 2017',
+      description: 'Comprehensive computer science and engineering program',
+      highlights: [
+        'Data Structures and Algorithms',
+        'Programming Languages (C, Java, Python)',
+        'Database Management Systems',
+        'Operating Systems',
+        'Computer Networks',
+        'Computer Organization and Architecture',
+        'Software Engineering',
+        'Web Technologies',
+        'Object-Oriented Programming',
+        'Software Testing and Quality Assurance',
+        'Project Management and Capstone Projects'
+      ]
     }
   ];
 
@@ -66,7 +87,7 @@ function Education() {
                 <div>
                   <h2>{item.degree || item.course}</h2>
                   <h3>{item.institution}</h3>
-                  {item.location && <p className="location">{item.location}</p>}
+                  {item.location && <p className="location">📍 {item.location}</p>}
                 </div>
                 <button className="expand-btn" aria-label="Expand details">
                   {expandedCard === item.id ? '−' : '+'}
@@ -81,7 +102,7 @@ function Education() {
 
               {item.highlights && (
                 <div className={`highlights-section ${expandedCard === item.id ? 'show' : ''}`}>
-                  <h4>Key Topics Covered:</h4>
+                  <h4>📚 Key Topics Covered:</h4>
                   <ul>
                     {item.highlights.map((highlight, index) => (
                       <li key={index}>{highlight}</li>
@@ -100,15 +121,23 @@ function Education() {
         </div>
 
         <div className="card certifications-card">
-          <h2>Certifications</h2>
+          <h2>🏆 Certifications</h2>
           <div className="certifications-grid">
             <div className="cert-item">
               <h3>Salesforce Certified AI Associate</h3>
               <span className="year">2025</span>
             </div>
             <div className="cert-item">
+              <h3>Salesforce Certified CPQ Specialist</h3>
+              <span className="year">2024</span>
+            </div>
+            <div className="cert-item">
               <h3>Salesforce Certified Platform Developer I</h3>
               <span className="year">2022</span>
+            </div>
+            <div className="cert-item">
+              <h3>Salesforce Certified Administrator</h3>
+              <span className="year">2021</span>
             </div>
             <div className="cert-item">
               <h3>Capgemini Certified .NET Developer</h3>

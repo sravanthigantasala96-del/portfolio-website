@@ -5,7 +5,7 @@
 
 .projects-showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -55,6 +55,14 @@
 
 .project-card.featured h2 {
   padding-right: 140px;
+}
+
+.project-role {
+  color: #003d82;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-style: italic;
 }
 
 .project-description {
@@ -131,10 +139,48 @@
   line-height: 1.6;
 }
 
+.project-link {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f0f0f0;
+}
+
+.demo-link {
+  color: #003d82;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.demo-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.link-note {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
 .react-concepts-card {
-  background: #f5f7fa;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   border: 1px solid #e8edf3;
   margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.react-concepts-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003d82, #0056b3, #003d82);
 }
 
 .react-concepts-card h2 {
@@ -152,7 +198,7 @@
 }
 
 .concept-item {
-  background: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   padding: 1.5rem;
   border-radius: 10px;
   border-top: 4px solid #003d82;
@@ -175,6 +221,12 @@
   color: #555;
   line-height: 1.6;
   font-size: 0.95rem;
+}
+
+@media (max-width: 1024px) {
+  .projects-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {

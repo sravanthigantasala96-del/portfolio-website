@@ -2,7 +2,7 @@
   "name": "sai-portfolio",
   "version": "1.0.0",
   "description": "Interactive portfolio website demonstrating React skills",
-  "homepage": "https://sravanthigantasala96-del.github.io/portfolio-website",
+  "homepage": "/portfolio-website",
   "private": true,
   "dependencies": {
     "react": "^18.2.0",

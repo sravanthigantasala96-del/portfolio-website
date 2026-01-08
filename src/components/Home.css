@@ -3,7 +3,7 @@
 }
 
 .hero-section {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;
@@ -104,19 +104,31 @@
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
   animation: fadeInRight 0.8s ease-out;
 }
 
 .stat-card {
-  background: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid #e8edf3;
   transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003d82, #0056b3, #003d82);
 }
 
 .stat-card:hover {
@@ -145,7 +157,7 @@
 }
 
 .quick-links .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -166,7 +178,7 @@
 }
 
 .link-card {
-  background: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   padding: 2rem;
   border-radius: 8px;
   text-decoration: none;
@@ -174,6 +186,18 @@
   transition: all 0.3s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   border: 1px solid #e8edf3;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003d82, #0056b3, #003d82);
 }
 
 .link-card:hover {
@@ -223,7 +247,7 @@
   }
 
   .hero-stats {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

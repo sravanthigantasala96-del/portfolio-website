@@ -5,7 +5,7 @@
 
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
 }
@@ -27,6 +27,7 @@
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid #f0f0f0;
+  gap: 1.5rem;
 }
 
 .education-header h2 {
@@ -62,6 +63,7 @@
   justify-content: center;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .expand-btn:hover {
@@ -92,7 +94,7 @@
 }
 
 .highlights-section.show {
-  max-height: 500px;
+  max-height: 1000px;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 2px solid #f0f0f0;
@@ -147,8 +149,20 @@
 }
 
 .certifications-card {
-  background: #f5f7fa;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   border: 1px solid #e8edf3;
+  position: relative;
+  overflow: hidden;
+}
+
+.certifications-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #003d82, #0056b3, #003d82);
 }
 
 .certifications-card h2 {
@@ -165,7 +179,7 @@
 }
 
 .cert-item {
-  background: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f7fa 100%);
   padding: 1.5rem;
   border-radius: 10px;
   border-left: 4px solid #003d82;
