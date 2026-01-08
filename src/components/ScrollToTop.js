@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './ScrollToTop.css';
 
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +28,7 @@ function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top"
+          className="fixed bottom-8 right-8 bg-danske-blue text-white border-none w-12 h-12 md:w-12 md:h-12 rounded-full text-2xl cursor-pointer shadow-lg z-[1000] transition-all duration-300 flex items-center justify-center animate-fade-in-up hover:bg-danske-blue-light hover:-translate-y-1 hover:shadow-xl active:translate-y-0"
           aria-label="Scroll to top"
         >
           ↑
@@ -40,4 +39,3 @@ function ScrollToTop() {
 }
 
 export default ScrollToTop;
-

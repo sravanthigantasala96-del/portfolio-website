@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './Navigation.css';
 
 function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,58 +10,72 @@ function Navigation() {
   };
 
   const isActive = (path) => {
-    return location.pathname === path ? 'active' : '';
+    return location.pathname === path;
+  };
+
+  const NavLink = ({ to, children }) => {
+    const active = isActive(to);
+    return (
+      <li className="w-full md:w-auto py-4 md:py-0">
+        <Link
+          to={to}
+          className={`text-[0.9375rem] font-medium no-underline transition-colors duration-300 relative py-3 block w-full md:w-auto group ${
+            active ? 'text-danske-blue' : 'text-danske-text-light hover:text-danske-blue'
+          }`}
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span>{children}</span>
+          <span className={`absolute bottom-0 left-0 h-[3px] bg-danske-blue rounded-t transition-all duration-300 ${
+            active ? 'w-full' : 'w-0 group-hover:w-full'
+          }`}></span>
+        </Link>
+      </li>
+    );
   };
 
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <Link to="/" className="nav-logo">
+    <nav className="bg-white shadow-sm sticky top-0 z-[1000] border-b border-danske-gray-light w-full">
+      <div className="max-w-container mx-auto px-8 flex justify-between items-center h-[72px] relative">
+        <Link to="/" className="text-xl font-semibold text-danske-blue no-underline transition-colors duration-300 tracking-tight hover:text-danske-blue-light">
           <span>Sai Sravanthi G</span>
         </Link>
         
-        <button className="nav-toggle" onClick={toggleMenu} aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button 
+          className="md:hidden flex flex-col bg-transparent border-none cursor-pointer p-2 gap-1 z-[1001]" 
+          onClick={toggleMenu} 
+          aria-label="Toggle menu"
+        >
+          <span className={`w-[25px] h-[3px] bg-danske-text rounded transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-[25px] h-[3px] bg-danske-text rounded transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-[25px] h-[3px] bg-danske-text rounded transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
         
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <li>
-            <Link to="/" className={`nav-link ${isActive('/')}`} onClick={() => setIsMenuOpen(false)}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={`nav-link ${isActive('/about')}`} onClick={() => setIsMenuOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/experience" className={`nav-link ${isActive('/experience')}`} onClick={() => setIsMenuOpen(false)}>
-              Experience
-            </Link>
-          </li>
-          <li>
-            <Link to="/education" className={`nav-link ${isActive('/education')}`} onClick={() => setIsMenuOpen(false)}>
-              Education
-            </Link>
-          </li>
-          <li>
-            <Link to="/skills" className={`nav-link ${isActive('/skills')}`} onClick={() => setIsMenuOpen(false)}>
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link to="/projects" className={`nav-link ${isActive('/projects')}`} onClick={() => setIsMenuOpen(false)}>
-              Projects
-            </Link>
-          </li>
+        {/* Desktop menu */}
+        <ul className="hidden md:flex list-none gap-8 items-center">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/experience">Experience</NavLink>
+          <NavLink to="/education">Education</NavLink>
+          <NavLink to="/skills">Skills</NavLink>
+          <NavLink to="/projects">Projects</NavLink>
         </ul>
+        
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="fixed inset-0 top-[72px] left-0 bg-white z-[999] md:hidden overflow-y-auto">
+            <ul className="list-none flex flex-col w-full py-8">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About</NavLink>
+              <NavLink to="/experience">Experience</NavLink>
+              <NavLink to="/education">Education</NavLink>
+              <NavLink to="/skills">Skills</NavLink>
+              <NavLink to="/projects">Projects</NavLink>
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
 }
 
 export default Navigation;
-

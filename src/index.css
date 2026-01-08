@@ -1,26 +1,58 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f5f7fa;
+    min-height: 100vh;
+    color: #1a2332;
+    scroll-behavior: smooth;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #f5f7fa;
-  min-height: 100vh;
-  color: #1a2332;
-  scroll-behavior: smooth;
-}
+@layer components {
+  .container {
+    @apply max-w-container mx-auto px-8;
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  .page-header {
+    @apply text-left text-danske-text mb-12 pb-6 border-b-2 border-danske-gray-light animate-fade-in-down;
+  }
 
-#root {
-  min-height: 100vh;
+  .page-header h1 {
+    @apply text-4xl md:text-4xl mb-2 font-semibold text-danske-blue tracking-tight;
+  }
+
+  .page-header p {
+    @apply text-lg text-danske-text-light font-normal;
+  }
+
+  .card {
+    @apply bg-white rounded-lg p-8 mb-6 shadow-sm border border-danske-gray-light transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-md border-danske-gray-light -translate-y-0.5;
+  }
 }
 

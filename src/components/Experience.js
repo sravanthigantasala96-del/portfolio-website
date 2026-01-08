@@ -36,28 +36,32 @@ function Experience() {
   ];
 
   return (
-    <div className="experience-page">
+    <div className="min-h-[calc(100vh-80px)] py-8">
       <div className="container">
         <div className="page-header">
           <h1>Professional Experience</h1>
           <p>7+ years of delivering scalable solutions across industries</p>
         </div>
 
-        <div className="card summary-card">
-          <h2>💼 Career Summary</h2>
-          <p>
+        <div className="card bg-danske-gray border-danske-gray-light mt-8">
+          <h2 className="text-danske-blue mb-4 text-3xl">💼 Career Summary</h2>
+          <p className="leading-relaxed text-[#555] text-lg">
             Over seven years building enterprise platforms and scalable solutions, with experience spanning 
             full-stack development at Capgemini and Salesforce development at TCS. Currently building my 
             career in Denmark, focusing on front-end development, automation, and scalable solutions.
           </p>
         </div>
 
-        <div className="experience-container">
-          <div className="company-selector">
+        <div className="mb-8">
+          <div className="flex gap-4 mb-8 flex-wrap">
             {experiences.map((exp, index) => (
               <button
                 key={index}
-                className={`company-btn ${selectedCompany === index ? 'active' : ''}`}
+                className={`px-8 py-4 border-2 rounded-lg cursor-pointer font-semibold text-base transition-all duration-300 flex-1 min-w-[200px] ${
+                  selectedCompany === index
+                    ? 'bg-danske-blue text-white border-danske-blue shadow-lg'
+                    : 'bg-white text-danske-blue border-danske-blue hover:bg-danske-gray hover:shadow-md'
+                }`}
                 onClick={() => setSelectedCompany(index)}
               >
                 {exp.company}
@@ -65,25 +69,27 @@ function Experience() {
             ))}
           </div>
 
-          <div className="experience-detail">
+          <div className="animate-fade-in">
             {experiences[selectedCompany] && (
-              <div className="card experience-card">
-                <div className="experience-header">
+              <div className="card animate-fade-in-up">
+                <div className="border-b-2 border-[#f0f0f0] pb-6 mb-8 flex justify-between items-start flex-wrap gap-4">
                   <div>
-                    <h2>{experiences[selectedCompany].company}</h2>
-                    <h3>{experiences[selectedCompany].position}</h3>
+                    <h2 className="text-danske-blue text-3xl mb-2 font-semibold">{experiences[selectedCompany].company}</h2>
+                    <h3 className="text-[#333] text-xl font-medium">{experiences[selectedCompany].position}</h3>
                   </div>
-                  <div className="experience-meta">
-                    <span className="location">📍 {experiences[selectedCompany].location}</span>
-                    <span className="period">📅 {experiences[selectedCompany].period}</span>
+                  <div className="flex flex-col items-end gap-2 md:items-end items-start">
+                    <span className="text-[#666] text-[0.95rem]">📍 {experiences[selectedCompany].location}</span>
+                    <span className="text-danske-blue font-semibold text-[0.95rem]">📅 {experiences[selectedCompany].period}</span>
                   </div>
                 </div>
                 
-                <div className="achievements">
-                  <h4>✨ Key Achievements:</h4>
-                  <ul>
+                <div>
+                  <h4 className="text-[#333] text-xl mb-6 pb-2 border-b-2 border-danske-blue inline-block">✨ Key Achievements:</h4>
+                  <ul className="list-none p-0">
                     {experiences[selectedCompany].achievements.map((achievement, index) => (
-                      <li key={index}>{achievement}</li>
+                      <li key={index} className="achievement-item p-4 mb-4 bg-danske-gray border-l-4 border-danske-blue rounded-lg leading-relaxed text-[#333] relative pl-8 transition-all duration-300 hover:translate-x-1 hover:shadow-md hover:bg-[#eef2f8]">
+                        {achievement}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -97,4 +103,3 @@ function Experience() {
 }
 
 export default Experience;
-
