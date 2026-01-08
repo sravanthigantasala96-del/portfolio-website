@@ -13,21 +13,23 @@ function Navigation() {
     return location.pathname === path;
   };
 
-  const NavLink = ({ to, children }) => {
+  const NavLink = ({ to, children, isMobile = false }) => {
     const active = isActive(to);
     return (
-      <li className="w-full md:w-auto py-4 md:py-0">
+      <li className={`w-full py-4 md:py-0 ${isMobile ? 'text-center' : 'md:w-auto'}`}>
         <Link
           to={to}
           className={`text-[0.9375rem] font-medium no-underline transition-colors duration-300 relative py-3 block w-full md:w-auto group ${
             active ? 'text-danske-blue' : 'text-danske-text-light hover:text-danske-blue'
-          }`}
+          } ${isMobile ? 'text-center' : ''}`}
           onClick={() => setIsMenuOpen(false)}
         >
           <span>{children}</span>
-          <span className={`absolute bottom-0 left-0 h-[3px] bg-danske-blue rounded-t transition-all duration-300 ${
-            active ? 'w-full' : 'w-0 group-hover:w-full'
-          }`}></span>
+          {!isMobile && (
+            <span className={`absolute bottom-0 left-0 h-[3px] bg-danske-blue rounded-t transition-all duration-300 ${
+              active ? 'w-full' : 'w-0 group-hover:w-full'
+            }`}></span>
+          )}
         </Link>
       </li>
     );
@@ -63,13 +65,13 @@ function Navigation() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="fixed inset-0 top-[72px] left-0 bg-white z-[999] md:hidden overflow-y-auto">
-            <ul className="list-none flex flex-col w-full py-8">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/experience">Experience</NavLink>
-              <NavLink to="/education">Education</NavLink>
-              <NavLink to="/skills">Skills</NavLink>
-              <NavLink to="/projects">Projects</NavLink>
+            <ul className="list-none flex flex-col w-full py-8 items-center">
+              <NavLink to="/" isMobile={true}>Home</NavLink>
+              <NavLink to="/about" isMobile={true}>About</NavLink>
+              <NavLink to="/experience" isMobile={true}>Experience</NavLink>
+              <NavLink to="/education" isMobile={true}>Education</NavLink>
+              <NavLink to="/skills" isMobile={true}>Skills</NavLink>
+              <NavLink to="/projects" isMobile={true}>Projects</NavLink>
             </ul>
           </div>
         )}
