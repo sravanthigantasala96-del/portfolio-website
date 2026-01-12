@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# documentation files (not to be committed)
+GITHUB_PAGES_DEPLOYMENT.md
+INTERVIEW_SUMMARY.md
