@@ -9,7 +9,7 @@ An interactive portfolio website built with React and Tailwind CSS to showcase p
 ## 🚀 Features
 
 - **Component-Based Architecture**: Modular, reusable React components
-- **React Router**: Multi-page navigation with routing
+- **React Router**: Client-side routing for single-page application (SPA)
 - **React Hooks**: useState and useEffect for state management
 - **Tailwind CSS**: Utility-first CSS framework for modern styling
 - **Responsive Design**: Mobile-friendly layouts

@@ -11,7 +11,7 @@ function Projects() {
       description: 'Interactive portfolio website demonstrating React skills and concepts',
       technologies: ['React', 'React Router', 'React Hooks', 'JSX', 'CSS', 'Git', 'GitHub Pages'],
       achievements: [
-        'Built a multi-page application with component-based architecture and state management using React Hooks',
+        'Built a single-page application (SPA) with component-based architecture and state management using React Hooks',
         'Implemented React Router for navigation and created responsive layouts with CSS Grid and Flexbox',
         'Deployed to GitHub Pages with proper routing configuration and custom 404 handling for SPA compatibility'
       ],
@@ -161,7 +161,7 @@ function Projects() {
             </div>
             <div className="bg-gradient-to-b from-white to-danske-gray p-6 rounded-lg border-t-4 border-danske-blue transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <h3 className="text-danske-blue text-xl mb-3 font-semibold">Routing</h3>
-              <p className="text-[#555] leading-relaxed text-base">Implemented React Router for multi-page navigation and routing</p>
+              <p className="text-[#555] leading-relaxed text-base">Implemented React Router for client-side routing in a single-page application (SPA)</p>
             </div>
             <div className="bg-gradient-to-b from-white to-danske-gray p-6 rounded-lg border-t-4 border-danske-blue transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               <h3 className="text-danske-blue text-xl mb-3 font-semibold">Component Styling</h3>
